@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 const app = express();
 app.use(express.json());
 
-const WIT_TOKEN = A7CY4SSGORDFO2FNN5PLPVY3ZWCIT33O; // replace this
+const WIT_TOKEN = "A7CY4SSGORDFO2FNN5PLPVY3ZWCIT33O"; // replace this
 
 app.post("/message", async (req, res) => {
   const userMessage = req.body.message;
@@ -24,3 +24,4 @@ app.post("/message", async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
