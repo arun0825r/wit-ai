@@ -5,6 +5,9 @@ const app = express();
 app.use(express.json());
 
 const WIT_TOKEN = "A7CY4SSGORDFO2FNN5PLPVY3ZWCIT33O"; // replace this
+app.get('/', (req, res) => {
+  res.send('Wit.ai Node.js API is running!');
+});
 
 app.post("/message", async (req, res) => {
   const userMessage = req.body.message;
@@ -24,4 +27,5 @@ app.post("/message", async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
