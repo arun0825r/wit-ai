@@ -30,8 +30,8 @@ app.post('/message', async (req, res) => {
         const response = await witClient.message(message);
         console.log('Wit.ai response:', JSON.stringify(response, null, 2));
 
-        const intents = response.intent && Object.keys(response.intent);
-        let intent = intents && intents[0]; // Simplified intent extraction
+        const intents = response.entities && Object.keys(response.entities);
+        let intent = entities && entities[0]; // Simplified intent extraction
         let replies = getReplies();
 
         // Select a random reply based on intent
@@ -50,6 +50,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
 
 
