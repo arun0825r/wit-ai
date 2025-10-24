@@ -1,6 +1,6 @@
 // replies.js
 
-// Store all your replies organized by intent name
+// Store all your replie organized by intent name
 export const replies = {
   greet_user: [
     "Hey there 👋",
@@ -35,4 +35,5 @@ export function getReply(intent) {
   const options = replies[intent] || replies.unknown;
   return options[Math.floor(Math.random() * options.length)];
 }
+
 
