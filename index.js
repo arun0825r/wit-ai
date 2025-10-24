@@ -28,6 +28,8 @@ app.post('/message', async (req, res) => {
     const { message } = req.body;
     try {
         const response = await witClient.message(message);
+        console.log('Wit.ai response:', JSON.stringify(response, null, 2));
+
         const intents = response.intent && Object.keys(response.intent);
         let intent = intents && intents[0]; // Simplified intent extraction
         let replies = getReplies();
@@ -48,6 +50,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
 
 
