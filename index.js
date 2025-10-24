@@ -6,6 +6,9 @@ const app = express();
 app.use(express.json());
 
 const WIT_TOKEN = "A7CY4SSGORDFO2FNN5PLPVY3ZWCIT33O"; // Replace with your actual Wit.ai token
+app.get('/', (req, res) => {
+  res.send('Server is up and running');
+});
 
 app.post("/message", async (req, res) => {
   const userMessage = req.body.message;
@@ -30,6 +33,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 
 
 
