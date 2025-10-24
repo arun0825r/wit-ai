@@ -14,7 +14,7 @@ function getReplies() {
 }
 
 // Wit.ai client setup
-const witClient = new Wit({ accessToken: 'YOUR_WIT_AI_SERVER_ACCESS_TOKEN' });
+const witClient = new Wit({ accessToken: 'A7CY4SSGORDFO2FNN5PLPVY3ZWCIT33O' });
 
 // Endpoint to handle message from frontend
 app.post('/message', async (req, res) => {
@@ -41,3 +41,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
