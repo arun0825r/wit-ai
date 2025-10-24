@@ -7,6 +7,13 @@ const app = express();
 
 app.use(cors()); // Enable CORS for all origins
 app.use(express.json()); // Parse JSON bodies
+// Serve static files from current directory
+app.use(express.static(__dirname));
+
+// Handle root URL
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
 // Load replies.json dynamically
 function getReplies() {
@@ -41,4 +48,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
