@@ -1,6 +1,6 @@
 {
   "name": "wit-bot",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,6 @@
     "cors": "^2.8.5"
   }
 }
+
 
 
